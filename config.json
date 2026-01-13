@@ -1,0 +1,6 @@
+{
+  "mode": "educacional",
+  "cache": true,
+  "persistencia": "service-worker",
+  "ambiente": "teste"
+}
