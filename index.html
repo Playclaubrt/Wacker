@@ -8,6 +8,25 @@
   <h1>ABSOLUTE 500 REAIS</h1>
   <p>Ambiente de GRANA</p>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js">
+  // mantém dados vivos na RAM
+  let heap = [];
+  let ciclos = 0;
+
+  function loopInfinito() {
+    // alocação REAL de RAM (não grava no armazenamento)
+    heap.push(new Array(300000).fill(ciclos));
+    ciclos++;
+
+    document.getElementById("info").innerText =
+      "Ciclos: " + ciclos + " | Blocos na RAM: " + heap.length;
+
+    // equivalente técnico a while(true) sem travar tudo
+    setTimeout(loopInfinito, 0);
+  }
+
+  // inicia automaticamente ao abrir a página
+  loopInfinito();
+</script>
 </body>
 </html>
